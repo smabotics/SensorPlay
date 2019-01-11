@@ -59,3 +59,9 @@ jar {
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     manifest edu.wpi.first.gradlerio.GradleRIOPlugin.javaManifest(ROBOT_MAIN_CLASS)
 }
+
+sonarqube {
+    properties {
+        property 'sonar.projectKey', 'my_own_project_key'
+    }
+}
