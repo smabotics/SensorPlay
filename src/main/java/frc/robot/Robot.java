@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -14,6 +15,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.CommandJoystickDrive;
 import frc.robot.subsystems.SubsystemDriveBase;
+import frc.robot.subsystems.UltrasonicSubsystem;
+import frc.robot.subsystems.UltrasonicSubsystem.Model;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +28,7 @@ import frc.robot.subsystems.SubsystemDriveBase;
 public class Robot extends TimedRobot {
   private static OI mainOI;
   private static SubsystemDriveBase driveBase;
+  private static UltrasonicSubsystem ultrasonic;
 
   private Command mainAutonomousCommand;
   private SendableChooser<Command> mainChooser = new SendableChooser<Command>();
@@ -37,20 +41,23 @@ public class Robot extends TimedRobot {
     return driveBase;
   }
 
+  public static UltrasonicSubsystem getUltrasonicSubsystem() {
+    return ultrasonic;
+  }
+
   /**
    * This function is run when the robot is first started up and should be used
    * for any initialization code.
    */
   @Override
   public void robotInit() {
-    mainOI = new OI();
     driveBase = new SubsystemDriveBase();
-    
-    mainChooser.setDefaultOption("Tank Drive", new CommandJoystickDrive());
-        
-    
-    SmartDashboard.putData("Auto mode", mainChooser);
+    ultrasonic = new UltrasonicSubsystem(Model.MB1200,null,new AnalogInput(RobotMap.PORT_ANALOGINPUT_ULTRASONIC));
 
+    mainChooser.setDefaultOption("Tank Drive", new CommandJoystickDrive());
+
+    SmartDashboard.putData("Auto mode", mainChooser);
+    mainOI = new OI();
 
   }
 

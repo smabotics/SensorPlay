@@ -24,4 +24,6 @@ public class RobotMap {
 
   public static final int PORT_DRIVE_JOYSTICK = 0;
 
+  public static final int PORT_ANALOGINPUT_ULTRASONIC = 0;
+
 }

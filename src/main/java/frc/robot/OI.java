@@ -16,10 +16,10 @@ import frc.robot.commands.TestCommand;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+  JoystickButton button = new JoystickButton(driveJoystick, 1);
 
   public OI() {
-    JoystickButton button = new JoystickButton(driveJoystick, 1);
-    button.whileHeld(new TestCommand());
+    button.whenPressed(new TestCommand());
   }
 
   public Joystick getDriveJoystick() {
