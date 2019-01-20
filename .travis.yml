@@ -13,7 +13,7 @@ addons:
       - master
       - makePull
 script:
-  - 
+  - chmod +x ./gradlew
   #- ant -f travis.build.xml
   # other script steps might be done before running the actual analysis
   - sonar-scanner 
