@@ -11,11 +11,11 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class TestCommand extends Command {
+public class ReadUltrasonicCommand extends Command {
 
   private boolean isFinished = true;
-  
-  public TestCommand() {
+
+  public ReadUltrasonicCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.getUltrasonicSubsystem());
