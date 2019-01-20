@@ -1,6 +1,6 @@
+sudo: false
 language: java
-
-#before_script: cd "SensorPlay"
+jdk: oraclejdk11
 
 addons:
   sonarcloud:
@@ -13,6 +13,7 @@ addons:
       - master
       - makePull
 script:
+  - 
   #- ant -f travis.build.xml
   # other script steps might be done before running the actual analysis
   - sonar-scanner 
