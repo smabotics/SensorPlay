@@ -1,6 +1,6 @@
 language: java
 
-before_script: cd "SensorPlay"
+#before_script: cd "SensorPlay"
 
 addons:
   sonarcloud:
