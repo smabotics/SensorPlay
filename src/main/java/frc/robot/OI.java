@@ -9,7 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.TestCommand;
+import frc.robot.commands.ReadUltrasonicCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,7 +19,7 @@ public class OI {
   JoystickButton button = new JoystickButton(driveJoystick, 1);
 
   public OI() {
-    button.whenPressed(new TestCommand());
+    button.whenPressed(new ReadUltrasonicCommand());
   }
 
   public Joystick getDriveJoystick() {
