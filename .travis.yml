@@ -2,6 +2,8 @@ sudo: false
 language: java
 jdk: oraclejdk11
 
+before_script:
+  - chmod +x gradle.w
 # addons:
 #   sonarcloud:
 #     organization: "smaboticsmaster-github" # the key of the org you chose at step #3
