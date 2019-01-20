@@ -17,10 +17,10 @@ public class RobotMap {
 
   public static final int PORT_DRIVE_JOYSTICK_RIGHT_Y_AXIS = 5;
   public static final int PORT_DRIVE_JOYSTICK_LEFT_Y_AXIS = 1;
-  public static final int PORT_DRIVE_TALON_FRONT_LEFT = 5;
-  public static final int PORT_DRIVE_TALON_BACK_LEFT = 2;
-  public static final int PORT_DRIVE_TALON_FRONT_RIGHT = 4;
-  public static final int PORT_DRIVE_TALON_BACK_RIGHT = 1;
+  public static final int PORT_DRIVE_TALON_FRONT_LEFT = 3;
+  public static final int PORT_DRIVE_TALON_BACK_LEFT = 4;
+  public static final int PORT_DRIVE_TALON_FRONT_RIGHT = 1;
+  public static final int PORT_DRIVE_TALON_BACK_RIGHT = 2;
 
   public static final int PORT_DRIVE_JOYSTICK = 0;
 

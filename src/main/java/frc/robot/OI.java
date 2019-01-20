@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.TestCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -15,9 +17,15 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 
-	public Joystick getDriveJoystick() {
-		return driveJoystick;
-	}
+  public OI() {
+    JoystickButton button = new JoystickButton(driveJoystick, 1);
+    button.whileHeld(new TestCommand());
+  }
+
+  public Joystick getDriveJoystick() {
+    return driveJoystick;
+  }
+
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
